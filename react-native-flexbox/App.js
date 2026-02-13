@@ -3,13 +3,15 @@ import { StyleSheet, Text, View } from 'react-native';
 import Flex from './components/Flex';
 import FlexDirectionBasics from './components/FlexDirectionBasics';
 import DirectionLayout from './components/DirectionLayout';
+import JustifyContentBasics from './components/JustifyContentBasics';
 
 export default function App() {
   return (
     <>
       {/* <Flex/> */}
       {/* <FlexDirectionBasics/> */}
-      <DirectionLayout/>
+      {/* <DirectionLayout/> */}
+      <JustifyContentBasics/>
     </>
   );
 }
