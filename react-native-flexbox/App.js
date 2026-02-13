@@ -2,12 +2,14 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Flex from './components/Flex';
 import FlexDirectionBasics from './components/FlexDirectionBasics';
+import DirectionLayout from './components/DirectionLayout';
 
 export default function App() {
   return (
     <>
       {/* <Flex/> */}
-      <FlexDirectionBasics/>
+      {/* <FlexDirectionBasics/> */}
+      <DirectionLayout/>
     </>
   );
 }
