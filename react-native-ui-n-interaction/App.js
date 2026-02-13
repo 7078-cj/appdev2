@@ -3,6 +3,7 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import LotsOfStyles from './components/LotsOfStyles';
 import FixedDimensionsBasics from './components/FixedDimensionsBasics';
 import FlexDimensionsBasics from './components/FlexDimensionsBasics';
+import PercentageDimensionsBasics from './components/PercentageDimensionsBasics';
 
 export default function App() {
   return (
@@ -12,7 +13,8 @@ export default function App() {
     //   <FlexDimensionsBasics/>
     // </ScrollView>
     <>
-      <FlexDimensionsBasics/>
+      {/* <FlexDimensionsBasics/> */}
+      <PercentageDimensionsBasics/>
     </>
   );
 }
