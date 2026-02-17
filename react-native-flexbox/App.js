@@ -5,6 +5,7 @@ import FlexDirectionBasics from './components/FlexDirectionBasics';
 import DirectionLayout from './components/DirectionLayout';
 import JustifyContentBasics from './components/JustifyContentBasics';
 import AlignItemsLayout from './components/AlignItemsLayout';
+import AlignSelfLayout from './components/AlignSelfLayout';
 
 export default function App() {
   return (
@@ -13,7 +14,8 @@ export default function App() {
       {/* <FlexDirectionBasics/> */}
       {/* <DirectionLayout/> */}
       {/* <JustifyContentBasics/> */}
-      <AlignItemsLayout/>
+      {/* <AlignItemsLayout/> */}
+      <AlignSelfLayout/>
     </>
   );
 }
