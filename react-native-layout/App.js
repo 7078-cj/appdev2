@@ -7,7 +7,8 @@ import Signup from './src/screens/Signup';
 const styles = StyleSheet.create({
   container:{
     flex: 1,
-    padding: 30
+    padding: 30,
+    backgroundColor: '#d3d3d3'
   },
   headerContainer:{
     flex: 1,
