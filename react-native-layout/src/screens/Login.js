@@ -8,15 +8,15 @@ import login from '../../assets/login.png'
 
 export default function Login({setPage, styles}) {
   return (
-    <View >
+    <View style={styles.container}>
       {/* Header */}
-      <View >
-        <Image source={login} />
-        <Text >Log In</Text>
+      <View style={styles.headerContainer}>
+        <Image source={login} style={styles.image}/>
+        <Text style={styles.header}>Log In</Text>
       </View>
 
       {/* Inputs */}
-      <View >
+      <View style={styles.inputContainer}>
 
         <TextInputComponent type={'email'} icon={<Ionicons name="mail-outline" size={22} color="gray" />}/>
 

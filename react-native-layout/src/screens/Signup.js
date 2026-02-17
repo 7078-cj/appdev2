@@ -7,14 +7,14 @@ import FooterComponent from '../components/FooterComponent';
 
 export default function Signup({setPage, styles}) {
   return (
-    <View >
+    <View style={styles.container}>
       {/* Header */}
-      <View >
-        <Text >Signup</Text>
+      <View style={styles.headerContainer}>
+        <Text style={styles.header}>Signup</Text>
       </View>
     
       {/* Inputs */}
-      <View >
+      <View style={styles.inputContainer}>
         <TextInputComponent type={'email'} icon={<Ionicons name="mail-outline" size={22} color="gray" />}/>
 
         <TextInputComponent type={'password'} icon={<Ionicons name="lock-closed-outline" size={22} color="gray" />}/>
