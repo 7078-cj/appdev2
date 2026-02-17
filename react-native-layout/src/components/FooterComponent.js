@@ -20,7 +20,7 @@ export default function FooterComponent({ path, setPage }) {
           }
           
         >
-          <Text>
+          <Text style={{color: '#2a3796', textDecorationLine: 'underline'}}>
             {path === 'signup' ? 'Login' : 'Signup'}
           </Text>
         </TouchableOpacity>
