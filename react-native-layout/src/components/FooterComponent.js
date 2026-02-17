@@ -33,12 +33,16 @@ export default function FooterComponent({ path, setPage }) {
 const styles = StyleSheet.create({
     container:{
         flex: 1,
+        flexDirection: 'column',
         alignItems:'center',
-        justifyContent: 'space-evenly'
+        justifyContent: 'flex-start',
+        alignContent: 'space-evenly',
+        marginTop:10
     },
     bottomContent:{
         flexDirection: 'row',
-        gap: 5
+        gap: 5,
+        marginTop:10
     },
     
 })
