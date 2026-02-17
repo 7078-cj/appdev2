@@ -4,10 +4,10 @@ import ButtonComponent from './ButtonComponent'
 
 export default function FooterComponent({ path, setPage }) {
   return (
-    <View >
+    <View style={styles.container}>
       <ButtonComponent text={path === 'signup' ? 'Login' : 'Signup'} />
 
-      <View >
+      <View style={styles.bottomContent}>
         <Text>
           {path === 'signup'
             ? "Already have an account?"
@@ -32,10 +32,13 @@ export default function FooterComponent({ path, setPage }) {
 
 const styles = StyleSheet.create({
     container:{
-       
+        flex: 1,
+        alignItems:'center',
+        justifyContent: 'space-evenly'
     },
     bottomContent:{
-      
+        flexDirection: 'row',
+        gap: 5
     },
     
 })
