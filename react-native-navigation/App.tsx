@@ -70,7 +70,11 @@ const RootStack = createNativeStackNavigator({
         title: 'Overview',
       },
     },
-    Details: DetailsScreen,
+    Details: {
+      screen: DetailsScreen,
+      initialParams: { itemId: 42 },
+
+    },
   },
 });
 
