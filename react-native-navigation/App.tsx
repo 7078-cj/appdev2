@@ -1,69 +1,75 @@
-  import * as React from 'react';
-  import { Text, View } from 'react-native';
-  import {
-    createStaticNavigation,
-    useNavigation,
-  } from '@react-navigation/native';
-  import { createNativeStackNavigator } from '@react-navigation/native-stack';
-  import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-  import { Button } from '@react-navigation/elements';
+import * as React from 'react';
+import { Text, View } from 'react-native';
+import {
+  createStaticNavigation,
+  useNavigation,
+  NavigationProp,
+} from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Button } from '@react-navigation/elements';
 
-  function SettingsScreen({ route }) {
-    const { userId } = route.params;
+import type {
+  RootTabParamList,
+  MoreStackParamList,
+  SettingsProps,
+} from './types';
 
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Settings Screen</Text>
-        <Text>User ID: {JSON.stringify(userId)}</Text>
-      </View>
-    );
-  }
+function SettingsScreen({ route }: SettingsProps) {
+  const { userId } = route.params;
 
-  function HomeScreen() {
-    const navigation = useNavigation();
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Settings Screen</Text>
+      <Text>User ID: {JSON.stringify(userId)}</Text>
+    </View>
+  );
+}
 
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Home Screen</Text>
-        <Button
-          onPress={
-            () =>
-              navigation.navigate('More', {
-                screen: 'Settings',
-                params: { userId: 'jane' },
-              })
-          }
-        >
-          Go to Settings
-        </Button>
-      </View>
-    );
-  }
+function HomeScreen() {
+  const navigation = useNavigation<NavigationProp<RootTabParamList>>();
 
-  function ProfileScreen() {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Profile Screen</Text>
-      </View>
-    );
-  }
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home Screen</Text>
+      <Button
+        onPress={() =>
+          navigation.navigate('More', {
+            screen: 'Settings',
+            params: { userId: 'jane' },
+          })
+        }
+      >
+        Go to Settings
+      </Button>
+    </View>
+  );
+}
 
-  const MoreStack = createNativeStackNavigator({
-    screens: {
-      Settings: SettingsScreen,
-      Profile: ProfileScreen,
-    },
-  });
+function ProfileScreen() {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Profile Screen</Text>
+    </View>
+  );
+}
 
-  const RootTabs = createBottomTabNavigator({
-    screens: {
-      Home: HomeScreen,
-      More: MoreStack,
-    },
-  });
+const MoreStack = createNativeStackNavigator<MoreStackParamList>({
+  screens: {
+    Settings: SettingsScreen,
+    Profile: ProfileScreen,
+  },
+});
 
-  const Navigation = createStaticNavigation(RootTabs);
+const RootTabs = createBottomTabNavigator<RootTabParamList>({
+  screens: {
+    Home: HomeScreen,
+    More: MoreStack,
+  },
+});
 
-  export default function App() {
-    return <Navigation />;
-  }
+const Navigation = createStaticNavigation(RootTabs);
+
+export default function App() {
+  return <Navigation />;
+}
